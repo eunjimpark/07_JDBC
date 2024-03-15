@@ -12,30 +12,38 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/department/selectAll")
-public class SelectAllServlet extends HttpServlet{
+@WebServlet("/department/search")
+public class SearchServlet extends HttpServlet{
+
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
 		try {
-			// Service 객체 생성
 			DepartmentService service = new DepartmentServiceImpl();
 			
-			// 모든 부서 조회 Service 호출 후 결과 반환 받기
-			List<Department> deptList = service.selectAll();
+			String keyword = req.getParameter("keyword"); // 검색어
 			
+			List<Department> deptList = service.searchDepartment(keyword);
 			
-			
+			// 조회 결과를 request scope에 속성으로 세팅
 			req.setAttribute("deptList", deptList);
 			
-			String path = "/WEB-INF/views/selectAll.jsp";
+			// forward할 JSP 경로
+			String path = "/WEB-INF/views/search.jsp";
 			
+			// 요청위임
 			req.getRequestDispatcher(path).forward(req, resp);
 			
-		} catch (Exception e) {
+			
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+	
 	}
-
+	
+	
+	
 }
+

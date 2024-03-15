@@ -1,4 +1,4 @@
-package edu.kh.model.dto;
+package edu.kh.dept.model.dto;
 
 // DTO 객체 하나가 DEPARTMENT4 테이블의 한 행 데이터를 저장하는 용도
 public class Department {

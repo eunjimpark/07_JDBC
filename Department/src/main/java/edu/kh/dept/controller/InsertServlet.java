@@ -2,10 +2,10 @@ package edu.kh.dept.controller;
 
 import java.io.IOException;
 
+import edu.kh.dept.model.dto.Department;
 import edu.kh.dept.model.exception.DepartmentInsertException;
-import edu.kh.dept.service.DepartmentService;
-import edu.kh.dept.service.DepartmentServiceImpl;
-import edu.kh.model.dto.Department;
+import edu.kh.dept.model.service.DepartmentService;
+import edu.kh.dept.model.service.DepartmentServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
