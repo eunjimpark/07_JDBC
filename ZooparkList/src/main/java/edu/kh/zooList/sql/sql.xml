@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+		
+	<!-- 동물목록조회 -->
+	<entry key="selectAll">
+	SELECT ZOO_NO, ZOO_LOCATION, ZOO_ANIMAL, ANIMAL_COUNT,
+	FROM TB_ZOO
+	ORDER BY ZOO_NO
+	</entry>
+	
+	
+	
+		<!--총동물 마리수 조회 -->
+		<entry key="getAnimalCount">
+			SELECT COUNT(*) 
+			FROM TB_ZOO
+			WHERE ANIMAL_COUNT
+		</entry>
+		
+
+
+			<!-- 동물 수정 -->
+		<entry key="updateZoo">
+			UPDATE TB_ZOO SET
+			ZOO_LOCATION = ?,
+			ZOO_ANIMAL = ?
+			WHERE ZOO_NO = ?
+		</entry>
+
+	
+		<!-- 동물 삭제 -->
+		<entry key="deleteZoo">
+			DELETE FROM TB_ZOO
+			WHERE ZOO_NO = ?
+		</entry>
+	
+	
+	
+	
+
+	
+	
+	
+	
+</properties>
